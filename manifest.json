@@ -1,17 +1,73 @@
 {
-  "lang": "ko-kr",
-  "name": "Temperature converter app",
-  "short_name": "Temperature converter",
-  "description": "A basic temperature converter application that can convert to and from Celsius, Kelvin, and Fahrenheit",
-  "start_url": "/",
-  "background_color": "#2f3d58",
-  "theme_color": "#2f3d58",
-  "orientation": "any",
+  "dir": "ltr",
+  "lang": "ko",
+  "name": "이름임",
+  "scope": "/",
   "display": "standalone",
+  "start_url": "/",
+  "short_name": "짧은 이름임",
+  "theme_color": "#aaffcc",
+  "description": "주절주절 설명임",
+  "orientation": "any",
+  "background_color": "#336699",
+  "related_applications": [],
+  "prefer_related_applications": false,
+  "screenshots": [
+    {
+      "src": "/pwa/screen1.png"
+    },
+    {
+      "src": "/pwa/screen2.png"
+    }    
+  ],
+  "features": [
+    "기능1",
+    "기능2",
+    "기능3"
+  ],
   "icons": [
     {
-      "src": "/icon512.png",
-      "sizes": "512x512"
+      "src": "/pwa/manifest-icon-192.maskable.png",
+      "sizes": "192x192",
+      "type": "image/png",
+      "purpose": "any"
+    },
+    {
+      "src": "/pwa/manifest-icon-192.maskable.png",
+      "sizes": "192x192",
+      "type": "image/png",
+      "purpose": "maskable"
+    },
+    {
+      "src": "/pwa/manifest-icon-512.maskable.png",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "any"
+    },
+    {
+      "src": "/pwa/manifest-icon-512.maskable.png",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "maskable"
     }
+  ],
+  "shortcuts": [
+    {
+      "name": "바로가기 이름임",
+      "short_name": "바로가기 짧은 이름임",
+      "description": "바로가기 주절주절 설명임",
+      "url": "/?startLive",
+      "icons": [
+        {
+          "src": "/pwa/shortcutsicon.png",
+          "sizes": "192x192"
+        }
+      ]
+    }
+  ],
+  "display_override": [
+    "window-controls-overlay"
   ]
 }
+
+
