@@ -53,21 +53,37 @@
   ],
   "shortcuts": [
     {
-      "name": "바로가기 이름임",
-      "short_name": "바로가기 짧은 이름임",
-      "description": "바로가기 주절주절 설명임",
-      "url": "/?startLive",
+      "name": "바로가기1 이름임",
+      "short_name": "바로가기1 짧은 이름임",
+      "description": "바로가기1 주절주절 설명임",
+      "url": "/?shortcut1",
       "icons": [
         {
-          "src": "/pwa/shortcutsicon96.png",
+          "src": "/pwa/shortcutsicon1_96.png",
           "sizes": "96x96"
         },        
         {
-          "src": "/pwa/shortcutsicon192.png",
+          "src": "/pwa/shortcutsicon1_192.png",
           "sizes": "192x192"
         }
       ]
-    }
+    },
+    {
+      "name": "바로가기2 이름임",
+      "short_name": "바로가기2 짧은 이름임",
+      "description": "바로가기2 주절주절 설명임",
+      "url": "/?shortcut2",
+      "icons": [
+        {
+          "src": "/pwa/shortcutsicon2_96.png",
+          "sizes": "96x96"
+        },        
+        {
+          "src": "/pwa/shortcutsicon2_192.png",
+          "sizes": "192x192"
+        }
+      ]
+    }    
   ],
   "display_override": [
     "window-controls-overlay"
