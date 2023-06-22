@@ -3,7 +3,7 @@
   "lang": "ko",
   "name": "이름임",
   "scope": "/",
-  "display": "standalone",
+  "display": "fullscreen",
   "start_url": "/",
   "short_name": "짧은 이름임",
   "theme_color": "#aaffcc",
@@ -18,7 +18,7 @@
     },
     {
       "src": "/pwa/screen2.png"
-    }    
+    }
   ],
   "features": [
     "기능1",
@@ -61,7 +61,7 @@
         {
           "src": "/pwa/shortcutsicon1_96.png",
           "sizes": "96x96"
-        },        
+        },
         {
           "src": "/pwa/shortcutsicon1_192.png",
           "sizes": "192x192"
@@ -77,17 +77,18 @@
         {
           "src": "/pwa/shortcutsicon2_96.png",
           "sizes": "96x96"
-        },        
+        },
         {
           "src": "/pwa/shortcutsicon2_192.png",
           "sizes": "192x192"
         }
       ]
-    }    
+    }
   ],
   "display_override": [
     "window-controls-overlay"
-  ]
+  ],
+  "edge_side_panel": {
+    "preferred_width": 0
+  }
 }
-
-
