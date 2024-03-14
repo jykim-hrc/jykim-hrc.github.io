@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="ko">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title> Hello </title>
+        <style type="text/css">
+            body { font-size:16px; }
+            .mt10px { margin-top:10px; }
+            #eventgo { padding:10px; width:1000px; font-size:3rem; border:1px solid #000000; }
+            #eventgoviewbox { padding:10px; height:500px; font-size:1rem; overflow-y:auto; background-color:#ffffcc; border:1px solid #000000; }
+            #eventgoviewbox b,
+            #eventgoviewbox b.textcolortrue { color:#0000ff; }
+            #eventgoviewbox b.textcolorfalse { color:#ff0000; }
+        </style>
+    </head>
+    <body>
+        <div>
+            <h1>Special key event catch 😁</h1>
+            <h3>Hello, this page is Javascript special key event catch sample.</h3>
+            <div class="mt10px"><input id="eventgo" type="text"></div>
+            <div class="mt10px"><label><input id="disablekeyinputevent" type="checkbox" checked="checked"> Disable key input event. if checked all key input is not work, not display.</label></div>
+            <div id="eventgoviewbox" class="mt10px"></div>
+            <h3>This sample reference.</h3>
+            <div><a href="https://davidwalsh.name/detect-caps-lock" target="_blank">https://davidwalsh.name/detect-caps-lock</a></div> 
+            <div><a href="https://w3c.github.io/uievents/#event-modifier-initializers" target="_blank">https://w3c.github.io/uievents/#event-modifier-initializers</a></div>
+        </div>
+
+        <script type="text/javascript">
+            const KeyDownEventX = function(e) {
+                const dkie = document.getElementById('disablekeyinputevent');
+
+                if(dkie.checked == true) {
+                    e.preventDefault();
+                }
+            
+                //console.log('KeyDownEventX', e);
+            };
+
+            const KeyUpEventX = function(e) {
+                e.preventDefault();
+
+                const viewBox = document.getElementById('eventgoviewbox'); 
+                const isCapsLockOn = e.getModifierState('CapsLock');
+                const isNumLockOn = e.getModifierState('NumLock');
+                const isAltGraph = e.getModifierState('AltGraph');
+                const isFn = e.getModifierState('Fn');
+                const isFnLock = e.getModifierState('FnLock');
+                const isHyper = e.getModifierState('Hyper');
+                const isScrollLock = e.getModifierState('ScrollLock');
+                const isSuper = e.getModifierState('Super');
+                const isSymbol = e.getModifierState('Symbol');
+                const isSymbolLock = e.getModifierState('SymbolLock');
+                let logText = '';
+
+                //console.log('KeyUpEventX', e);
+                logText += ('<div>Type : <b>' + e.type + '</b></div>');
+                logText += '<br>';
+                logText += ('<div>Key : <b>' + e.key + '</b></div>');
+                logText += ('<div>KeyCode : <b>' + e.keyCode + '</b></div>');
+                logText += ('<div>Code : <b>' + e.code + '</b></div>');
+                logText += '<br>';
+                logText += ('<div>AltKey : <b class="textcolor' + e.altKey + '">' + e.altKey + '</b></div>');
+                logText += ('<div>CtrlKey : <b class="textcolor' + e.ctrlKey + '">' + e.ctrlKey + '</b></div>');
+                logText += ('<div>ShiftKey : <b class="textcolor' + e.shiftKey + '">' + e.shiftKey + '</b></div>');
+                logText += ('<div>MetaKey : <b class="textcolor' + e.metaKey + '">' + e.metaKey + '</b></div>');
+                logText += '<br>';
+                logText += ('<div>IsCapsLockOn : <b class="textcolor' + isCapsLockOn + '">' + isCapsLockOn + '</b></div>');
+                logText += ('<div>IsNumLockOn : <b class="textcolor' + isNumLockOn + '">' + isNumLockOn + '</b></div>');
+                logText += ('<div>IsScrollLock : <b class="textcolor' + isScrollLock + '">' + isScrollLock + '</b></div>');
+                logText += '<br>';
+                logText += ('<div>IsAltGraph : <b class="textcolor' + isAltGraph + '">' + isAltGraph + '</b></div>');
+                logText += ('<div>IsFn : <b class="textcolor' + isFn + '">' + isFn + '</b></div>');
+                logText += ('<div>IsFnLock : <b class="textcolor' + isFnLock + '">' + isFnLock + '</b></div>');
+                logText += ('<div>IsHyper : <b class="textcolor' + isHyper + '">' + isHyper + '</b></div>');
+                logText += ('<div>IsSuper : <b class="textcolor' + isSuper + '">' + isSuper + '</b></div>');
+                logText += ('<div>IsSymbol : <b class="textcolor' + isSymbol + '">' + isSymbol + '</b></div>');
+                logText += ('<div>IsSymbolLock : <b class="textcolor' + isSymbolLock + '">' + isSymbolLock + '</b></div>');
+
+                viewBox.innerHTML = logText;            
+            };
+
+            const PageLoadX = function() {
+                const gox = document.getElementById('eventgo');
+
+                gox.addEventListener('keydown', KeyDownEventX);
+                gox.addEventListener('keyup', KeyUpEventX);
+            };
+
+            (PageLoadX)();
+        </script>
+    </body>
+</html>
